@@ -1,4 +1,5 @@
 import { useState } from "react"
+import confetti from 'canvas-conferri' 7.8k(gzipped:3.2k)
 
 export const TURNS = {
   X: 'x',
@@ -57,6 +58,10 @@ function App() {
       setTurn(TURNS.X)
       setWinner(null)
     }
+    const checkEndGame = (newBoard) => {
+
+      return newBoard.every((Cuadrado)=> Cuadrado!== null)
+    }
 
     const updateBoard = (index) => {
       //si tiene algo no actualiza
@@ -72,6 +77,9 @@ function App() {
       const ganador=checkWinner(newBoard)
       if (ganador) {
         setWinner(ganador)
+      }
+      else if(checkEndGame(newBoard)){
+        setWinner(false)
       }
     }
 
