@@ -1,5 +1,5 @@
 import { useState } from "react"
-import confetti from 'canvas-conferri' 7.8k(gzipped:3.2k)
+import confetti from 'canvas-confetti' 
 
 export const TURNS = {
   X: 'x',
