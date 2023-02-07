@@ -73,10 +73,11 @@ function App() {
       //cambia turno
       const nuevoTurno= turn === TURNS.X ? TURNS.O : TURNS.X
       setTurn(nuevoTurno)
-
+      
       const ganador=checkWinner(newBoard)
       if (ganador) {
         setWinner(ganador)
+        confetti
       }
       else if(checkEndGame(newBoard)){
         setWinner(false)
